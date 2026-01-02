@@ -1,819 +1,456 @@
+<!-- index.html -->
 <!doctype html>
 <html lang="pt-br">
 <head>
   <meta charset="utf-8">
   <title>Casamento no cartório | PK Films</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Foto e vídeo para casamento no cartório com clima romântico e leve. Pacotes com ensaio em parque no mesmo dia.">
-  <style>
-    :root{
-      --bg:#faf7f6;
-      --card:#ffffff;
-      --text:#26252a;
-      --muted:#7c7674;
-      --accent:#e6b98a;
-      --accent-strong:#d1904d;
-      --border:#e1d6d0;
-    }
-    *{box-sizing:border-box;margin:0;padding:0}
-    body{
-      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-      background:var(--bg);
-      color:var(--text);
-      line-height:1.5;
-    }
-    a{text-decoration:none;color:inherit}
-    .container{max-width:960px;margin:0 auto;padding:0 16px}
-    header{
-      position:sticky;
-      top:0;
-      z-index:10;
-      background:rgba(250,247,246,.95);
-      backdrop-filter:blur(10px);
-      border-bottom:1px solid var(--border);
-    }
-    .nav{
-      height:64px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:12px;
-    }
-    .logo{
-      display:flex;
-      align-items:center;
-      gap:8px;
-      font-weight:800;
-      letter-spacing:.5px;
-    }
-    .logo-mark{
-      width:24px;
-      height:24px;
-      border-radius:50%;
-      border:2px solid var(--accent);
-      display:grid;
-      place-items:center;
-      font-size:12px;
-      font-weight:700;
-      color:var(--accent-strong);
-    }
-    .nav-links{
-      display:none;
-      font-size:14px;
-      color:var(--muted);
-      gap:8px;
-      align-items:center;
-    }
-    .nav-links a{
-      padding:4px 6px;
-      border-radius:999px;
-    }
-    .nav-links a:hover{
-      background:rgba(0,0,0,.03);
-    }
-    @media(min-width:720px){
-      .nav-links{display:flex}
-    }
-    main section{padding:32px 0}
-    @media(min-width:720px){
-      main section{padding:48px 0}
-    }
-    .hero{
-      padding-top:32px;
-      padding-bottom:32px;
-    }
-    .hero-grid{
-      display:grid;
-      gap:24px;
-    }
-    @media(min-width:720px){
-      .hero-grid{
-        grid-template-columns:1.2fr 1fr;
-        align-items:center;
-      }
-    }
-    .hero-title{
-      font-size:26px;
-      font-weight:800;
-      letter-spacing:.3px;
-    }
-    @media(min-width:720px){
-      .hero-title{font-size:34px}
-    }
-    .hero-sub{
-      margin-top:12px;
-      color:var(--muted);
-      font-size:15px;
-    }
-    .hero-badges{
-      margin-top:12px;
-      display:flex;
-      flex-wrap:wrap;
-      gap:8px;
-    }
-    .badge{
-      padding:6px 10px;
-      border-radius:999px;
-      background:#f1e7df;
-      color:#7c5a3a;
-      font-size:12px;
-      border:1px solid rgba(0,0,0,.03);
-    }
-    .hero-actions{
-      margin-top:16px;
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-    }
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:8px;
-      padding:10px 18px;
-      border-radius:999px;
-      font-weight:700;
-      font-size:14px;
-      border:none;
-      cursor:pointer;
-    }
-    .btn-main{
-      background:var(--accent-strong);
-      color:#fff;
-      box-shadow:0 8px 24px rgba(0,0,0,.18);
-    }
-    .btn-ghost{
-      background:transparent;
-      color:var(--accent-strong);
-      border:1px solid var(--accent-strong);
-    }
-    .hero-note{
-      margin-top:10px;
-      display:flex;
-      align-items:center;
-      gap:6px;
-      font-size:13px;
-      color:var(--muted);
-    }
-    .hero-note span{
-      width:18px;
-      height:18px;
-      border-radius:999px;
-      display:grid;
-      place-items:center;
-      background:#c7f2d0;
-      color:#155724;
-      font-size:12px;
-      font-weight:700;
-    }
-    .hero-photo-card{
-      background:var(--card);
-      border-radius:20px;
-      border:1px solid var(--border);
-      padding:10px;
-      box-shadow:0 10px 26px rgba(0,0,0,.16);
-    }
-    .hero-photo{
-      position:relative;
-      border-radius:16px;
-      background:linear-gradient(135deg,#f6e0d0,#f3ccd7);
-      min-height:180px;
-      display:grid;
-      place-items:center;
-      overflow:hidden;
-    }
-    .hero-photo small{
-      font-size:13px;
-      color:#5f4b44;
-      text-align:center;
-      padding:0 0px;
-    }
-    .hero-tag{
-      position:absolute;
-      left:10px;
-      bottom:10px;
-      background:rgba(255,255,255,.9);
-      padding:6px 10px;
-      border-radius:999px;
-      font-size:11px;
-      color:#9b6a3b;
-      font-weight:600;
-    }
-    .section-title{
-      font-size:22px;
-      margin-bottom:6px;
-      font-weight:700;
-    }
-    .section-sub{
-      font-size:14px;
-      color:var(--muted);
-      margin-bottom:16px;
-    }
-    .cards-grid{
-      display:grid;
-      gap:16px;
-    }
-    @media(min-width:720px){
-      .cards-grid.cols-3{
-        grid-template-columns:repeat(3,minmax(0,1fr));
-      }
-      .cards-grid.cols-2{
-        grid-template-columns:repeat(2,minmax(0,1fr));
-      }
-    }
-    .card{
-      background:var(--card);
-      border-radius:16px;
-      border:1px solid var(--border);
-      padding:16px;
-      box-shadow:0 8px 20px rgba(0,0,0,.08);
-    }
-    .plan-label{
-      font-size:13px;
-      color:var(--muted);
-      margin-bottom:4px;
-    }
-    .plan-name{
-      font-weight:700;
-      margin-bottom:4px;
-    }
-    .plan-price{
-      font-size:18px;
-      font-weight:800;
-      color:var(--accent-strong);
-      margin-bottom:6px;
-    }
-    .plan-detail{
-      font-size:13px;
-      color:var(--muted);
-      margin-bottom:8px;
-    }
-    .plan-list{
-      font-size:13px;
-      color:var(--text);
-      margin-left:14px;
-      margin-bottom:8px;
-    }
-    .plan-list li{
-      margin-bottom:4px;
-    }
-    .plan-tag{
-      display:inline-block;
-      margin-top:4px;
-      padding:4px 8px;
-      border-radius:999px;
-      background:#f3dcc2;
-      font-size:11px;
-      color:#8a5b2a;
-      font-weight:700;
-    }
-    .timeline{
-      border-left:2px solid var(--border);
-      padding-left:16px;
-      margin-top:8px;
-    }
-    .timeline-step{
-      margin-bottom:10px;
-      position:relative;
-    }
-    .timeline-step::before{
-      content:"";
-      position:absolute;
-      left:-19px;
-      top:4px;
-      width:10px;
-      height:10px;
-      border-radius:999px;
-      background:var(--accent);
-    }
-    .timeline-title{
-      font-size:14px;
-      font-weight:600;
-    }
-    .timeline-text{
-      font-size:13px;
-      color:var(--muted);
-    }
-    .gallery-grid{
-      display:grid;
-      gap:10px;
-      grid-template-columns:repeat(2,minmax(0,1fr));
-    }
-    @media(min-width:720px){
-      .gallery-grid{
-        grid-template-columns:repeat(4,minmax(0,1fr));
-      }
-    }
-    .gallery-item{
-      border-radius:14px;
-      background:linear-gradient(135deg,#f8ddd2,#f4cee3);
-      min-height:80px;
-      display:grid;
-      place-items:center;
-      font-size:12px;
-      color:#6e4a3b;
-      text-align:center;
-      padding:4px;
-    }
-    .video-frame{
-      border-radius:16px;
-      overflow:hidden;
-      background:#000;
-      position:relative;
-      padding-top:56.25%;
-      margin-bottom:10px;
-    }
-    .video-frame iframe{
-      position:absolute;
-      top:0;
-      left:0;
-      width:100%;
-      height:100%;
-      border:0;
-    }
-    .simulator-row{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      margin-bottom:8px;
-      font-size:14px;
-    }
-    .simulator-row span{
-      color:var(--muted);
-      font-size:13px;
-    }
-    .sim-total{
-      margin-top:10px;
-      font-weight:700;
-      font-size:16px;
-      color:var(--accent-strong);
-    }
-    .testimonial{
-      font-size:13px;
-      color:var(--text);
-    }
-    .testimonial small{
-      display:block;
-      margin-top:6px;
-      color:var(--muted);
-    }
-    .faq-item{
-      margin-bottom:10px;
-    }
-    .faq-q{
-      font-weight:600;
-      font-size:14px;
-    }
-    .faq-a{
-      font-size:13px;
-      color:var(--muted);
-    }
-    .cta-final{
-      text-align:center;
-    }
-    .cta-final p{
-      margin-top:4px;
-      color:var(--muted);
-      font-size:14px;
-    }
-    footer{
-      padding:20px 0;
-      font-size:12px;
-      color:var(--muted);
-      border-top:1px solid var(--border);
-      margin-top:24px;
-    }
-    .footer-wrap{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:8px;
-      flex-wrap:wrap;
-    }
-    .whatsapp-float{
-      position:fixed;
-      right:16px;
-      bottom:16px;
-      width:56px;
-      height:56px;
-      border-radius:50%;
-      display:grid;
-      place-items:center;
-      box-shadow:0 8px 24px rgba(0,0,0,.3);
-      z-index:20;
-    }
-    .whatsapp-float img{
-      width:50px;
-      height:50px;
-      display:block;
-    }
+  <meta name="description" content="Foto e vídeo para casamento no cartório com clima romântico e leve. Pacotes com ensaio em parque no mesmo dia. Atendimento em São José dos Campos e região.">
 
-    .familia{
-      width: 100%;
-      border-radius: 10px;
-    }
-    .gallery-item{
-  overflow:hidden;
-}
+  <meta property="og:title" content="Casamento no cartório | PK Films">
+  <meta property="og:description" content="Foto e vídeo para casamento no cartório. Combo com ensaio em parque no mesmo dia. Atendimento em São José dos Campos e região.">
+  <meta property="og:image" content="https://patrickleandro.github.io/cartorio/image/familia.jpeg">
+  <meta property="og:url" content="https://patrickleandro.github.io/cartorio/">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#faf7f6">
 
-.gallery-item img{
-  width:100%;
-  height:100%;
-  display:block;
-  object-fit:cover;
-  transition:transform .4s ease;
-  border-radius: 15px;
-  padding: 3px;
-}
-
-.gallery-item img:hover{
-  transform:scale(1.05);
-}
-
-  </style>
+  <link rel="stylesheet" href="style/main.css">
 </head>
+
 <body>
 
 <header>
   <div class="container nav">
-    <div class="logo">
+    <div class="logo" aria-label="PK Films">
       <div class="logo-mark">PK</div>
       <div>
         <div>PK Films</div>
         <small style="font-size:11px;color:var(--muted)">Casamento no cartório</small>
       </div>
     </div>
-    <nav class="nav-links">
+
+    <nav class="nav-links" aria-label="Navegação">
       <a href="#planos">Planos</a>
       <a href="#como-funciona">Como funciona</a>
       <a href="#fotos">Fotos</a>
+      <a href="#videos">Vídeos</a>
       <a href="#contato">Contato</a>
     </nav>
+
+    <div class="nav-cta">
+      <a class="btn btn-main" href="https://wa.me/5512991358013?text=Oi%20Patrick%2C%20quero%20or%C3%A7amento%20para%20casamento%20no%20cart%C3%B3rio.%20Data%3A%20%20Cart%C3%B3rio%3A%20%20Cidade%3A%20" target="_blank" rel="noreferrer">
+        Garantir data no WhatsApp
+      </a>
+    </div>
   </div>
 </header>
 
+<div class="sticky-bar" id="stickyBar">
+  <div class="container sticky-inner">
+    <div class="sticky-text">
+      <strong>Agenda de cartório anda rápido.</strong> Se você já tem data, chama agora e eu confirmo a disponibilidade.
+    </div>
+
+    <div class="sticky-actions">
+      <a class="btn btn-soft" href="https://wa.me/5512991358013?text=Oi%20Patrick%2C%20minha%20data%20de%20cart%C3%B3rio%20%C3%A9%20%20e%20quero%20saber%20se%20voc%C3%AA%20tem%20hor%C3%A1rio.%20Cidade%3A%20%20Cart%C3%B3rio%3A%20%20" target="_blank" rel="noreferrer">
+        Confirmar disponibilidade
+      </a>
+      <button class="sticky-close" type="button" id="closeSticky" aria-label="Fechar aviso">×</button>
+    </div>
+  </div>
+</div>
+
 <main>
 
-  <!-- HERO -->
   <section class="hero">
     <div class="container hero-grid">
       <div>
         <h1 class="hero-title">Seu casamento no cartório com cara de filme e memória para a vida inteira</h1>
+
         <p class="hero-sub">
-          Registro completo do dia no cartório e ensaio em parque no mesmo dia.
-          Fotos e vídeo com clima leve, romântico e verdadeiro.
+          Registro completo do dia no cartório e, se você quiser, um ensaio no parque no mesmo dia.
+          Leve, romântico e de verdade, sem pose travada e sem pressão.
         </p>
+
         <div class="hero-badges">
           <span class="badge">São José dos Campos</span>
           <span class="badge">Vale do Paraíba</span>
           <span class="badge">Casamentos íntimos</span>
         </div>
-        <div class="hero-actions">
-          <a href="#planos" class="btn btn-main">Ver pacotes e valores</a>
-          <a href="#como-funciona" class="btn btn-ghost">Entender como funciona</a>
+
+        <div class="trust" aria-label="Pontos de segurança">
+          <div class="trust-item"><span class="trust-dot">✓</span><div>Prévia rápida para você já ter algo lindo para postar.</div></div>
+          <div class="trust-item"><span class="trust-dot">✓</span><div>Entrega completa em cerca de 7 dias, conforme o pacote.</div></div>
+          <div class="trust-item"><span class="trust-dot">✓</span><div>Você curte o momento, eu cuido do visual e do ritmo.</div></div>
         </div>
-        <div class="hero-note">
-          <span>✓</span>
-          <div>Combo mais escolhido por casais que querem algo simples e inesquecível</div>
+
+        <div class="hero-actions">
+          <a href="https://wa.me/5512991358013?text=Oi%20Patrick%2C%20quero%20or%C3%A7amento%20para%20casamento%20no%20cart%C3%B3rio.%20Data%3A%20%20Cart%C3%B3rio%3A%20%20Cidade%3A%20%20Quero%3A%20(Fotos%2FVideo%2FCombo%2FCombo%20com%20parque)" class="btn btn-main" target="_blank" rel="noreferrer">
+            Chamar no WhatsApp agora
+          </a>
+          <a href="#planos" class="btn btn-ghost">Ver pacotes e valores</a>
+          <a href="#como-funciona" class="btn btn-soft">Entender como funciona</a>
+        </div>
+
+        <div class="urgency">
+          <span class="pill"><i></i>Datas de cartório costumam ter poucos horários</span>
+          <strong>Se a data já está marcada, vale chamar hoje.</strong>
         </div>
       </div>
+
       <div class="hero-photo-card">
         <div class="hero-photo">
-          <small>
-            <img src="image/familia.jpeg" alt="" class="familia">
-          </small>
-          <div class="hero-tag">Casamento no cartório . PK Films</div>
+          <img
+            src="image/familia.jpeg"
+            alt="Casamento no cartório em São José dos Campos, fotos e vídeo pela PK Films"
+            fetchpriority="high"
+            decoding="async"
+          >
+          <div class="hero-tag">Cartório, parque, PK Films</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- PLANOS -->
   <section id="planos">
     <div class="container">
       <h2 class="section-title">Planos para casamento no cartório</h2>
       <p class="section-sub">
-        Pacotes pensados para quem quer algo prático, com preço claro e lembrança bonita.
+        Preço claro, entrega bonita, e um dia leve do jeito que vocês merecem.
       </p>
 
       <div class="cards-grid cols-3">
         <div class="card">
           <div class="plan-label">Registro essencial</div>
           <div class="plan-name">Fotos no cartório</div>
-          <div class="plan-price">R$ 350,00  </div>
+          <div class="plan-price">R$ 350,00</div>
           <div class="plan-detail">
-            Ideal para quem quer ter boas fotos do momento da assinatura e da família, com registro simples e elegante.
+            Para guardar o que importa, com fotos naturais e elegantes.
           </div>
           <ul class="plan-list">
-            <li>Chegada e momentos antes da cerimônia</li>
-            <li>Assinatura e troca de alianças no cartório</li>
+            <li>Chegada e momentos antes</li>
+            <li>Assinatura e troca de alianças</li>
             <li>Fotos com família e amigos</li>
             <li>Mini ensaio rápido no próprio cartório</li>
           </ul>
-          <!-- <div class="plan-detail">Valor a definir. Você pode preencher aqui depois.</div> -->
-        </div> 
+          <div class="plan-cta">
+            <a class="btn btn-soft" href="https://wa.me/5512991358013?text=Oi%20Patrick%2C%20quero%20o%20plano%20Fotos%20no%20cart%C3%B3rio%20de%20R%24%20350.%20Minha%20data%20%C3%A9%20%20e%20o%20cart%C3%B3rio%20%C3%A9%20" target="_blank" rel="noreferrer">
+              Quero esse plano
+            </a>
+          </div>
+          <div class="mini-note">Entrega mínima: 40 fotos tratadas em alta, por link. Arquivos disponíveis por 30 dias.</div>
+        </div>
 
         <div class="card">
           <div class="plan-label">História em movimento</div>
           <div class="plan-name">Vídeo no cartório</div>
-          <div class="plan-price">R$ 320,00 </div>
+          <div class="plan-price">R$ 320,00</div>
           <div class="plan-detail">
-            Para quem gosta de ver e rever o dia em vídeo, com sorrisos e reações.
+            Para ver e rever as reações e o clima do dia.
           </div>
           <ul class="plan-list">
             <li>Captação em vídeo da cerimônia</li>
             <li>Momentos com família e amigos</li>
-            <li>Vídeo em formato de destaque com música</li>
-            <li>Arquivo em alta para compartilhar com quem quiser</li>
+            <li>Vídeo de destaque com música</li>
+            <li>Arquivo em alta para compartilhar</li>
           </ul>
+          <div class="plan-cta">
+            <a class="btn btn-soft" href="https://wa.me/5512991358013?text=Oi%20Patrick%2C%20quero%20o%20plano%20V%C3%ADdeo%20no%20cart%C3%B3rio%20de%20R%24%20320.%20Minha%20data%20%C3%A9%20%20e%20o%20cart%C3%B3rio%20%C3%A9%20" target="_blank" rel="noreferrer">
+              Quero esse plano
+            </a>
+          </div>
+          <div class="mini-note">Entrega: 1 vídeo de destaque com cerca de 60 a 90 segundos em alta, por link. Arquivos disponíveis por 30 dias.</div>
         </div>
 
         <div class="card">
           <div class="plan-label">Combo cartório</div>
           <div class="plan-name">Fotos e vídeo no cartório</div>
-          <div class="plan-price">R$ 580</div>
+          <div class="plan-price">R$ 580,00</div>
           <div class="plan-detail">
-            Pacote que registra o cartório de forma completa em fotos e vídeo.
+            O cartório completo, bem contado, com foto e vídeo.
           </div>
           <ul class="plan-list">
-            <li>Foto e vídeo desde a chegada até a saída</li>
+            <li>Foto e vídeo da chegada até a saída</li>
             <li>Família e amigos registrados com calma</li>
             <li>Mini ensaio nos arredores do cartório</li>
-            <li>Vídeo em formato de destaque</li>
+            <li>Vídeo de destaque do dia</li>
           </ul>
-          <div class="plan-tag">Base do combo completo</div>
+          <span class="plan-tag">Base do combo completo</span>
+          <div class="plan-cta">
+            <a class="btn btn-soft" href="https://wa.me/5512991358013?text=Oi%20Patrick%2C%20quero%20o%20plano%20Fotos%20e%20v%C3%ADdeo%20no%20cart%C3%B3rio%20de%20R%24%20580.%20Minha%20data%20%C3%A9%20%20e%20o%20cart%C3%B3rio%20%C3%A9%20" target="_blank" rel="noreferrer">
+              Quero esse plano
+            </a>
+          </div>
+          <div class="mini-note">Entrega mínima: 60 fotos tratadas em alta e 1 vídeo de destaque de 60 a 90 segundos. Por link, disponível por 30 dias.</div>
         </div>
       </div>
 
       <div style="margin-top:24px">
-        <div class="card" style="border-width:2px;border-color:var(--accent-strong)">
-          <div class="plan-label">Experiência completa no mesmo dia - O queridinho dos noivos</div>
+        <div class="card cta-box">
+          <div class="plan-label">Experiência completa no mesmo dia</div>
           <div class="plan-name">Combo cartório mais parque</div>
-          <div class="plan-price">R$ 990</div>
+          <div class="plan-price">R$ 990,00</div>
           <div class="plan-detail">
-            Pacote principal. Cartório completo em foto e vídeo mais ensaio em parque na cidade, ainda no mesmo dia.
+            O pacote principal para quem quer um casamento simples, mas com cara de ensaio.
+            Cartório completo em foto e vídeo, depois parque, tudo no mesmo dia.
           </div>
           <ul class="plan-list">
             <li>Fotos e vídeo no cartório</li>
-            <li>Ensaio em parque no mesmo dia, com clima leve e romântico</li>
-            <li>Registro de detalhes, casal e momentos espontâneos</li>
-            <li>Possibilidade de Drone quando o local permitir e o clima ajudar</li>
-            <li>Vídeo de destaque do dia com montagem do cartório e do parque</li>
+            <li>Ensaio em parque no mesmo dia, leve e romântico</li>
+            <li>Registro de detalhes e momentos espontâneos</li>
+            <li>Drone quando o local permitir e o clima ajudar</li>
+            <li>Vídeo de destaque unindo cartório e parque</li>
           </ul>
+
+          <div class="divider"></div>
+
           <div class="plan-detail">
-            Valor pode ser parcelado em até 10 vezes sem juros no cartão.
+            Parcelamento em até 10 vezes sem juros no cartão.
+            Se a data for próxima, melhor garantir o horário o quanto antes.
           </div>
+
+          <div class="plan-cta">
+            <a class="btn btn-main" href="https://wa.me/5512991358013?text=Oi%20Patrick%2C%20quero%20o%20Combo%20cart%C3%B3rio%20mais%20parque%20de%20R%24%20990.%20Minha%20data%20%C3%A9%20%20e%20o%20cart%C3%B3rio%20%C3%A9%20%20em%20%20.%20Quero%20confirmar%20disponibilidade%20agora." target="_blank" rel="noreferrer">
+              Quero garantir minha data
+            </a>
+            <a class="btn btn-ghost" href="#contato">Tirar dúvidas rápidas</a>
+          </div>
+
           <span class="plan-tag">Mais escolhido pelos casais</span>
+          <div class="mini-note">Entrega: 80 a 120 fotos tratadas em alta e 1 vídeo de destaque cartório e 1 no parque. Por link, disponível por 30 dias.</div>
         </div>
       </div>
 
       <div style="margin-top:16px;font-size:13px;color:var(--muted)">
-        Cobertura de recepção após o cartório pode ser acrescentada ao pacote.
-        O valor varia conforme o tempo de evento e o local.
+        Reserva de data com 20% de sinal. O restante pode ser no pix ou no cartão em até 10 vezes.
+        Entrega por link. Os arquivos ficam disponíveis por 30 dias.
+      </div>
+
+      <div style="margin-top:12px;font-size:13px;color:var(--muted)">
+        Cobertura de recepção após o cartório pode ser acrescentada.
+        O valor varia conforme tempo e local.
       </div>
     </div>
   </section>
 
-  <!-- COMO FUNCIONA -->
   <section id="como-funciona">
     <div class="container">
       <h2 class="section-title">Como funciona o dia com a PK Films</h2>
       <p class="section-sub">
-        Você não precisa se preocupar com roteiro.
-        A ideia é que vocês curtam o dia enquanto nós organizamos o visual.
+        Você não precisa de roteiro.
+        Vocês vivem o momento e eu conduzo o visual com leveza.
       </p>
 
       <div class="timeline">
         <div class="timeline-step">
           <div class="timeline-title">Antes do dia</div>
           <div class="timeline-text">
-            Conversamos por mensagem ou chamada rápida.
-            Ajustamos horário, cartório, parque e possíveis detalhes de recepção.
+            Alinhamos por mensagem ou chamada rápida.
+            Horário, cartório, parque e o que é importante para vocês.
           </div>
         </div>
+
         <div class="timeline-step">
           <div class="timeline-title">Chegada ao cartório</div>
           <div class="timeline-text">
-            Registro da chegada e dos primeiros encontros com família e amigos.
-            Pequenas orientações para evitar fotos travadas.
+            Registro da chegada e dos encontros.
+            Orientação simples para tudo ficar bonito e natural.
           </div>
         </div>
+
         <div class="timeline-step">
           <div class="timeline-title">Cerimônia</div>
           <div class="timeline-text">
-            Captação discreta para vocês viverem o momento com naturalidade.
-            Foto e vídeo na hora da assinatura e das trocas de alianças.
+            Captação discreta para vocês viverem o momento.
+            Foto e vídeo na hora da assinatura e das alianças.
           </div>
         </div>
+
         <div class="timeline-step">
           <div class="timeline-title">Família e amigos</div>
           <div class="timeline-text">
-            Fotos com quem estiver presente, em combinações que façam sentido para vocês.
+            Fotos com quem estiver presente, sem bagunça e sem pressa.
           </div>
         </div>
+
         <div class="timeline-step">
           <div class="timeline-title">Mini no cartório</div>
           <div class="timeline-text">
-            Alguns minutos para fotos só do casal, aproveitando o momento.
+            Alguns minutos só do casal, para fechar com carinho e presença.
           </div>
         </div>
+
         <div class="timeline-step">
           <div class="timeline-title">Ensaio em parque</div>
           <div class="timeline-text">
             No combo, seguimos para um parque escolhido.
-            Fotos e vídeo com clima leve, caminhada, abraços, risos.
-            Se o local permitir e tempo, uso de drone para imagens aéreas.
+            Caminhada, abraço, risada.
+            Drone quando local e clima ajudarem.
           </div>
         </div>
+
         <div class="timeline-step">
           <div class="timeline-title">Recepção</div>
           <div class="timeline-text">
-            Se houver almoço ou recepção simples, posso incluir no pacote.
-            Aqui o foco é registrar abraços, brindes e clima de família.
+            Se houver almoço ou recepção simples, dá para incluir.
+            O foco vira abraço, brinde, família e clima.
           </div>
         </div>
       </div>
+
+      <div class="hero-actions" style="margin-top:18px">
+        <a href="https://wa.me/5512991358013?text=Oi%20Patrick%2C%20quero%20confirmar%20se%20voc%C3%AA%20tem%20disponibilidade%20na%20minha%20data%20de%20cart%C3%B3rio%3A%20%20.%20Cidade%3A%20%20.%20Cart%C3%B3rio%3A%20" class="btn btn-main" target="_blank" rel="noreferrer">
+          Confirmar agenda agora
+        </a>
+        <a href="#planos" class="btn btn-ghost">Ver valores</a>
+      </div>
     </div>
   </section>
 
-  <!-- FOTOS -->
   <section id="fotos">
     <div class="container">
       <h2 class="section-title">Um pouco do clima nas fotos</h2>
-      <!--<p class="section-sub">
-        Espaço para você colocar fotos reais de casais no cartório, no parque e na recepção.
-      </p>-->
-      <div class="gallery-grid">
-        <div class="gallery-item">
-          <img src="image/01.jpeg" alt="Casal na porta do cartório">
-        </div>
-        <div class="gallery-item">
-          <img src="image/02.jpeg" alt="Assinatura no balcão">
-        </div>
-        <div class="gallery-item">
-          <img src="image/03.jpeg" alt="Beijo com a família">
-        </div>
-        <div class="gallery-item">
-          <img src="image/04.jpeg" alt="Detalhe das alianças">
-        </div>
-        <div class="gallery-item">
-          <img src="image/05.jpeg" alt="Caminhada no parque">
-        </div>
-        <div class="gallery-item">
-          <img src="image/06.jpeg" alt="Ensaio no fim da tarde">
-        </div>
-        <div class="gallery-item">
-          <img src="image/07.jpeg" alt="Brinde na recepção">
-        </div>
-        <div class="gallery-item">
-          <img src="image/08.jpeg" alt="Foto divertida com amigos">
-        </div>
+      <p class="section-sub">
+        Clica nas fotos para ampliar.
+        Se quiser ver mais, vai revelando aos poucos.
+      </p>
+
+      <div class="gallery-grid" id="gallery">
+        <button class="gallery-item" type="button"><img src="image/01.jpeg" alt="Casal na porta do cartório" loading="lazy" decoding="async"></button>
+        <button class="gallery-item" type="button"><img src="image/02.jpeg" alt="Assinatura no cartório" loading="lazy" decoding="async"></button>
+        <button class="gallery-item" type="button"><img src="image/03.jpeg" alt="Beijo com a família" loading="lazy" decoding="async"></button>
+        <button class="gallery-item" type="button"><img src="image/04.jpeg" alt="Detalhe das alianças" loading="lazy" decoding="async"></button>
+        <button class="gallery-item" type="button"><img src="image/05.jpeg" alt="Caminhada no parque" loading="lazy" decoding="async"></button>
+        <button class="gallery-item" type="button"><img src="image/06.jpeg" alt="Ensaio no fim da tarde" loading="lazy" decoding="async"></button>
+        <button class="gallery-item" type="button"><img src="image/07.jpeg" alt="Brinde na recepção" loading="lazy" decoding="async"></button>
+        <button class="gallery-item" type="button"><img src="image/08.jpeg" alt="Foto com amigos" loading="lazy" decoding="async"></button>
+
+        <button class="gallery-item is-hidden" type="button"><img src="image/09.jpeg" alt="Saída do cartório" loading="lazy" decoding="async"></button>
+        <button class="gallery-item is-hidden" type="button"><img src="image/10.jpeg" alt="Abraço com familiares" loading="lazy" decoding="async"></button>
+        <button class="gallery-item is-hidden" type="button"><img src="image/11.jpeg" alt="Momento espontâneo do casal" loading="lazy" decoding="async"></button>
+        <button class="gallery-item is-hidden" type="button"><img src="image/12.jpeg" alt="Detalhes do dia" loading="lazy" decoding="async"></button>
+        <button class="gallery-item is-hidden" type="button"><img src="image/13.jpeg" alt="Ensaio no parque com risadas" loading="lazy" decoding="async"></button>
+        <button class="gallery-item is-hidden" type="button"><img src="image/14.jpeg" alt="Foto de casal em movimento" loading="lazy" decoding="async"></button>
+        <button class="gallery-item is-hidden" type="button"><img src="image/15.jpeg" alt="Retrato do casal no fim de tarde" loading="lazy" decoding="async"></button>
+        <button class="gallery-item is-hidden" type="button"><img src="image/16.jpeg" alt="Detalhe de mãos e alianças" loading="lazy" decoding="async"></button>
       </div>
 
+      <div style="margin-top:14px;text-align:center">
+        <button class="btn btn-soft" type="button" id="loadMorePhotos">
+          Ver mais fotos
+        </button>
+      </div>
+    </div>
+
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+      <div class="lightbox-backdrop" id="lbBackdrop"></div>
+
+      <div class="lightbox-card" role="dialog" aria-label="Galeria de fotos">
+        <button class="lightbox-close" type="button" id="lbClose" aria-label="Fechar">×</button>
+        <button class="lightbox-nav prev" type="button" id="lbPrev" aria-label="Foto anterior">‹</button>
+        <img class="lightbox-img" id="lbImg" alt="Foto ampliada">
+        <button class="lightbox-nav next" type="button" id="lbNext" aria-label="Próxima foto">›</button>
+        <div class="lightbox-caption" id="lbCaption"></div>
+      </div>
     </div>
   </section>
 
-  <!-- VÍDEOS -->
   <section id="videos">
     <div class="container">
       <h2 class="section-title">Vídeos para ver o dia ganhar vida</h2>
-      <!-- <p class="section-sub">
-        Aqui você pode colocar alguns vídeos publicados no YouTube.
-        Basta trocar o endereço do exemplo pelo seu.
-      </p>-->
 
       <div class="card">
-        <div >
-          <div style="padding:177.78% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/1148034744?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479 " frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;top:0;left:0;width:100%;height:100%; border-radius: 10px;" title="Casamento Cartório Letícia &amp; David"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+        <div style="padding:177.78% 0 0 0;position:relative;">
+          <iframe
+            src="https://player.vimeo.com/video/1148034744?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+            frameborder="0"
+            allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            style="position:absolute;top:0;left:0;width:100%;height:100%; border-radius: 10px;"
+            title="Casamento Cartório Letícia e David">
+          </iframe>
         </div>
-        <!-- <div style="font-size:13px;color:var(--muted)">
-          Vídeo exemplo do seu casamento de cartório.
-          Troque pelo seu conteúdo real.
-        </div> -->
+
+        <div class="mini-note">
+          Quer um vídeo assim com a sua data. Me chama e eu te digo o que encaixa melhor no seu dia.
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- SIMULADOR 
-  <section id="simulador">
-    <div class="container">
-      <h2 class="section-title">Simule seu pacote</h2>
-      <p class="section-sub">
-        Escolha o que faz sentido para o seu dia.
-        O valor aparece em seguida para você ter noção de investimento.
-      </p>
-
-      <div class="card">
-        <div class="simulator-row">
-          <label>
-            <input type="checkbox" id="sim-cartorio" checked>
-            Foto e vídeo no cartório
-          </label>
-          <span>R$ 580</span>
-        </div>
-        <div class="simulator-row">
-          <label>
-            <input type="checkbox" id="sim-parque">
-            Ensaio em parque no mesmo dia
-          </label>
-          <span>R$ 410</span>
-        </div>
-        <div class="simulator-row">
-          <label>
-            <input type="checkbox" id="sim-recepcao">
-            Cobertura de recepção
-          </label>
-          <span>Valor a combinar</span>
-        </div>
-        <div class="sim-total" id="sim-total">Total estimado R$ 580</div>
-        <div style="margin-top:6px;font-size:12px;color:var(--muted)">
-          Este cálculo é uma base.
-          Podemos ajustar tempo, locais e forma de pagamento na conversa.
-        </div>
-      </div>
-    </div>
-  </section>
--->
-  <!-- DEPOIMENTOS 
   <section id="depoimentos">
     <div class="container">
-      <h2 class="section-title">Palavras de quem já viveu isso</h2>
-      <p class="section-sub">
-        Depoimentos reais ajudam quem está chegando agora a ficar mais tranquilo.
-      </p>
+      <h2 class="section-title">O que os casais dizem</h2>
+      <p class="section-sub">Curto, real, e é isso que importa.</p>
 
       <div class="cards-grid cols-3">
-        <div class="card testimonial">
-          <p>
-            O cartório foi rápido, mas o registro deixou tudo grande para a nossa história.
-            As fotos e o vídeo ficaram do jeito que a gente queria.
-          </p>
-          <small>Ana e Rafael</small>
-        </div>
-        <div class="card testimonial">
-          <p>
-            O combo com o parque fez toda a diferença.
-            A gente saiu do cartório e já foi direto viver um momento só nosso.
-          </p>
-          <small>Mariana e João</small>
-        </div>
-        <div class="card testimonial">
-          <p>
-            Foi tudo simples, prático e leve.
-            Ficamos à vontade o tempo inteiro e o resultado fala por si.
-          </p>
-          <small>Camila e Pedro</small>
-        </div>
+        <div class="card">“A gente ficou leve o tempo todo. As fotos ficaram lindas.”<div class="mini-note">Letícia, São José dos Campos</div></div>
+        <div class="card">“O vídeo ficou com cara de filme, sem ficar forçado.”<div class="mini-note">David, Jacareí</div></div>
+        <div class="card">“Foi rápido no cartório e mesmo assim ficou completo.”<div class="mini-note">Seu próximo casal, Vale do Paraíba</div></div>
       </div>
     </div>
-  </section> -->
+  </section>
 
-  <!-- FAQ E CONTATO -->
   <section id="contato">
     <div class="container">
       <div class="cards-grid cols-2">
         <div>
-          <h2 class="section-title">Dúvidas mais comuns</h2>
+          <h2 class="section-title">Dúvidas comuns</h2>
+
           <div class="faq-item">
             <div class="faq-q">E se chover no dia</div>
             <div class="faq-a">
-              Ajustamos o ensaio no parque para um lugar coberto ou remarcamos essa parte, de acordo com a agenda.
+              Ajustamos o ensaio para um lugar coberto ou remarcamos essa parte, conforme agenda.
             </div>
           </div>
+
           <div class="faq-item">
             <div class="faq-q">Você atende todos os cartórios</div>
             <div class="faq-a">
-              Atendo principalmente em São José dos Campos e região.
-              Para outros locais combinamos tempo e deslocamento.
+              Atendo principalmente São José dos Campos e região.
+              Para outras cidades combinamos deslocamento.
             </div>
           </div>
+
           <div class="faq-item">
-            <div class="faq-q">Em quanto tempo recebemos as fotos e o vídeo</div>
+            <div class="faq-q">Em quanto tempo recebemos</div>
             <div class="faq-a">
-              Prazo combinado gira em torno de 01 dia para a prévia e cerca de 07 dias para a entrega completa, conforme o pacote.
+              Prévia rápida e entrega completa em cerca de 7 dias, conforme o pacote.
             </div>
           </div>
+
           <div class="faq-item">
             <div class="faq-q">Como funciona o pagamento</div>
             <div class="faq-a">
-              É possível sinal mais restante no cartão em até dez vezes ou no pix conforme combinarmos.
+              Reserva de data com 20% de sinal. O restante pode ser no pix ou no cartão em até 10 vezes.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-q">Como garantir o horário</div>
+            <div class="faq-a">
+              Me chama com data e cartório.
+              Eu confirmo a agenda e a gente fecha rápido para travar o horário.
             </div>
           </div>
         </div>
-        <div class="card cta-final">
-          <h2 class="section-title">Quer conversar sobre o seu dia</h2>
+
+        <div class="card cta-final cta-box">
+          <h2 class="section-title">Quer fechar isso com leveza</h2>
           <p>
-            Me chama no WhatsApp, conta a data do cartório e o que você está imaginando.
-            A partir daí eu te ajudo a escolher o melhor caminho.
+            Me chama no WhatsApp e manda três coisas.
+            Data do cartório, cidade, e se vocês querem só cartório ou combo com parque.
           </p>
+
           <div style="margin-top:14px">
-            <a class="btn btn-main" href="https://wa.me/5512991358013" target="_blank" rel="noreferrer">
-              Falar pelo WhatsApp
+            <a class="btn btn-main" href="https://wa.me/5512991358013?text=Oi%20Patrick%2C%20minha%20data%20de%20cart%C3%B3rio%20%C3%A9%20%20.%20Cidade%3A%20%20.%20Cart%C3%B3rio%3A%20%20.%20Quero%3A%20(Fotos%2FVideo%2FCombo%2FCombo%20com%20parque)" target="_blank" rel="noreferrer">
+              Falar no WhatsApp e garantir
             </a>
           </div>
+
           <p style="margin-top:10px;font-size:12px">
-            Não tem problema se você ainda não decidiu tudo.
-            A ideia é justamente clarear isso juntos.
+            Se a data for próxima, melhor chamar agora.
+            Cartório não espera e eu também não gosto de correr no dia.
           </p>
         </div>
       </div>
@@ -828,38 +465,18 @@
     <div>
       <a href="#planos">Planos</a> |
       <a href="#fotos">Fotos</a> |
+      <a href="#videos">Vídeos</a> |
       <a href="#contato">Contato</a>
     </div>
   </div>
 </footer>
 
-<!-- Botão fixo de WhatsApp -->
-<a class="whatsapp-float" href="https://wa.me/5512991358013" target="_blank" rel="noreferrer" aria-label="WhatsApp">
-  <img src="image/whatsapp-logo-icone.png" alt="">
-  <!-- ícone simples em SVG 
-  <svg viewBox="0 0 32 32" width="28" height="28">
-    <circle cx="16" cy="16" r="16" fill="#25d366"/>
-    <path fill="#fff" d="M22.3 9.7a7.9 7.9 0 0 0-12.5 9l-1.1 4.1 4.2-1.1a7.9 7.9 0 0 0 9.4-12zM16 21.4a5.4 5.4 0 0 1-2.7-.7l-.2-.1-2.5.7.7-2.4-.1-.2a5.4 5.4 0 1 1 4.8 2.7zm3-3.9c-.2-.1-1.3-.7-1.4-.7s-.3-.1-.4.1-.5.7-.7.8-.3.1-.5 0a4.5 4.5 0 0 1-2.3-2c-.2-.4.2-.3.6-1s0-.7 0-.8 0-.2-.1-.3-.4-1-0.6-1.3-.3-.3-.4-.3h-.3a.9.9 0 0 0-.6.3 2.4 2.4 0 0 0-.7 1.8 4.2 4.2 0 0 0 .9 2.2 9.6 9.6 0 0 0 3.7 3.1 4.2 4.2 0 0 0 2.6.8 2.2 2.2 0 0 0 1.5-.7 1.8 1.8 0 0 0 .4-1.1c0-.3 0-.4-.2-.4z"/>
-  </svg>-->
+<a class="whatsapp-float" href="https://wa.me/5512991358013?text=Oi%20Patrick%2C%20quero%20or%C3%A7amento%20para%20casamento%20no%20cart%C3%B3rio.%20Data%3A%20%20Cidade%3A%20%20Cart%C3%B3rio%3A%20" target="_blank" rel="noreferrer" aria-label="WhatsApp">
+  <img src="image/whatsapp-logo-icone.png" alt="WhatsApp" loading="lazy" decoding="async">
 </a>
 
-<script>
-  // simulador simples
-  function atualizarSimulador(){
-    const cartorio = document.getElementById("sim-cartorio").checked ? 580 : 0;
-    const parque = document.getElementById("sim-parque").checked ? 410 : 0;
-    const total = cartorio + parque;
-    const el = document.getElementById("sim-total");
-    if(total > 0){
-      el.textContent = "Total estimado R$ " + total.toString();
-    }else{
-      el.textContent = "Selecione pelo menos um item";
-    }
-  }
-  document.getElementById("sim-cartorio").addEventListener("change", atualizarSimulador);
-  document.getElementById("sim-parque").addEventListener("change", atualizarSimulador);
-  atualizarSimulador();
-</script>
+<script src="https://player.vimeo.com/api/player.js" defer></script>
+<script src="script/main.js" defer></script>
 
 </body>
 </html>
